@@ -1,0 +1,10 @@
+DeployDev:
+  stage: deploy
+  script:
+    - make assume
+    - make push
+    - make source && make deploy
+  tags:
+    - sti-runner
+  only:
+    - develop
